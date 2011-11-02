@@ -46,3 +46,5 @@ gem 'database_cleaner'
 gem 'launchy'
 
 gem 'liaison' 
+
+gem 'pg'
