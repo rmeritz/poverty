@@ -7,6 +7,11 @@ gem 'rails', '3.1.1'
 
 group :test, :development do 
 gem 'sqlite3'
+gem 'rspec-rails'
+gem 'database_cleaner'
+gem 'launchy'
+gem 'cucumber-rails'
+gem 'capybara'
 end 
 
 gem 'json'
@@ -33,19 +38,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
-gem 'rspec-rails'
-
-gem 'cucumber-rails'
-
-gem 'capybara'
-
 gem 'execjs'
 
 gem 'therubyracer'
-
-gem 'database_cleaner'
-
-gem 'launchy'
 
 gem 'liaison' 
 

@@ -4,9 +4,12 @@ class SalariesController < ApplicationController
   end
   def create 
     @salary = presenter.with_params(params[:salary])
-    # salary_sorter = SalarySorter.new(@salary)
-    # if salary_sorter.top_1?
+    salary_sorter = SalarySorter.new(@salary)
+    if salary_sorter.top_1?
+      render :action => 'yes'
+    else
       render :action => 'no'
+    end
   end
   def presenter
     Presenter.new('salary',
