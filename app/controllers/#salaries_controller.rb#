@@ -1,0 +1,10 @@
+class SalariesController < ApplicationController
+  def new
+    @salary = presenter
+  end
+  def presenter
+    Presenter.new('salary',
+                  :fields => [:amount])
+  end
+end
+end
