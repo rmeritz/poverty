@@ -44,3 +44,5 @@ gem 'therubyracer'
 gem 'database_cleaner'
 
 gem 'launchy'
+
+gem 'liaison' 

@@ -1,5 +1,7 @@
 <%=form_for @salary do | form | %>
 
-<%=form.text_field :salary, nil, :id=> 'salary' %>
+<%=form.text_field :amount, :id=> 'salary' %>
+
+<%=form.submit 'Find out' %>
 
 <%end %> 

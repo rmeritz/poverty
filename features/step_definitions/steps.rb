@@ -8,6 +8,6 @@ When /^I submit a small value$/ do
   click_button('Find out')
 end
 
-Then /^I see that I'm not in the top one percent$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^I see that I'm not in the top one percent$/ do #'
+  page.should have_content('no')
 end
