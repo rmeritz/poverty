@@ -5,10 +5,10 @@ class SalariesController < ApplicationController
   def create 
     @salary = presenter.with_params(params[:salary])
     salary_sorter = SalarySorter.new(@salary)
-    if salary_sorter.top_1?
-      render :action => 'yes'
-    else
+    if salary_sorter.in_poverty?
       render :action => 'no'
+    else
+      render :action => 'yes'
     end
   end
   def presenter
