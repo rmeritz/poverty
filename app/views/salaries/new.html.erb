@@ -6,18 +6,13 @@
 
 <%content_for :javascript do %>
 <%=javascript_tag do %>
-$("#salary_amount").keydown(function(event) {
-        // Allow only backspace and delete
-        if ( event.keyCode == 46 || event.keyCode == 8 ) {
-            // let it happen, don't do anything
-        }
-        else {
-            // Ensure that it is a number and stop the keypress
-            if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-                event.preventDefault(); 
-            }   
-        }
-    });
+$("#salary_amount").priceFormat({
+    prefix: '',
+    thousandsSeparator: ',',
+    centsLimit: 0,
+    centsSeparator: ''
+});
+
 <%end %>
 <%end %>
 

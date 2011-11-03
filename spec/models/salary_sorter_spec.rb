@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe SalarySorter do
   let(:in_poverty)  {SalarySorter.new(:amount => '100')}
-  let(:not_in_poverty) {SalarySorter.new(:amount => '20890')}
-  let(:on_poverty_line) {SalarySorter.new(:amount => '10890')}
+  let(:not_in_poverty) {SalarySorter.new(:amount => '20,890')}
+  let(:on_poverty_line) {SalarySorter.new(:amount => '10,890')}
 
   it "knows if you're not in poverty" do 
     not_in_poverty.should_not be_in_poverty

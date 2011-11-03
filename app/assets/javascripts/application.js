@@ -6,4 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.price_format.js
 //= require_tree .
