@@ -1,4 +1,7 @@
 class SalariesController < ApplicationController
+  def index
+    render :text => "created_at,amount,ip"
+  end
   def new
     @salary = presenter
   end
