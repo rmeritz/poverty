@@ -1,12 +1,11 @@
 Feature: Entering a Salary 
-  Scenario: Not in the top 1%
+  Scenario: Not living in poverty
     When I go to the homepage
-    And I submit a 12% salary
-    Then I see that I'm not in the top one percent
-    But I see that I'm in the 12%
-
-  Scenario: In the top 1%
+    And I submit a salary above the poverty line 
+    Then I see that I'm not living in poverty
+    
+  Scenario: Living in Poverty
     When I go to the homepage
-    And I submit a huge value
-    Then I see that I'm in the top one percent
+    And I submit a tiny value
+    Then I see that I'm livining in poverty
 
