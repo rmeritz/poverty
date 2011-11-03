@@ -1,8 +1,12 @@
 class SalarySorter
+  POVERTY_LINE = 10890
   def initialize(presenter)
-    @amount = presenter[:amount]
+    @amount = presenter[:amount].to_i
   end
   def in_poverty?
-    @amount.to_i <= 10890
+    @amount <= POVERTY_LINE
+  end
+  def delta 
+    (@amount - POVERTY_LINE).abs
   end
 end
