@@ -4,17 +4,24 @@ class SalariesController < ApplicationController
   end
   def create 
     @salary = presenter.with_params(params[:salary])
-    salary_sorter = SalarySorter.new(@salary)
-    if salary_sorter.in_poverty?
-      @amount_under = salary_sorter.delta
-      render :action => 'yes'
+    if @salary.valid?
+      salary_sorter = SalarySorter.new(@salary)
+      if salary_sorter.in_poverty?
+        @amount_under = salary_sorter.delta
+        render :action => 'yes'
+      else
+        @amount_over = salary_sorter.delta
+        render :action => 'no'
+      end
     else
-      @amount_over = salary_sorter.delta
-      render :action => 'no'
+      render :new
     end
   end
   def presenter
     Presenter.new('salary',
-                  :fields => [:amount])
+                  :fields => [:amount], 
+                  :validator => SalaryValidator)
   end
 end
+
+

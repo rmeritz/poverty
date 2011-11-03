@@ -45,3 +45,5 @@ gem 'therubyracer'
 gem 'liaison' 
 
 gem 'pg'
+
+gem 'dynamic_form'

@@ -11,3 +11,9 @@ Feature: Entering a Salary
     Then I see that I'm living in poverty
     And that I make $10889/yr below the poverty line
 
+ Scenario: Entering Nothing
+    When I go to the homepage
+    And I submit nothing
+    Then I am still on the homepage
+    And I see an error message for entering nothing
+

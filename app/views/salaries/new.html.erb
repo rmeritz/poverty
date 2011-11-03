@@ -1,6 +1,7 @@
 <%=form_for @salary do | form | %>
+<%=@salary.errors.full_messages.join%>
 
-<%=form.text_field :amount, :id=> 'salary' %>
+<%=form.text_field :amount %>
 
 <%=form.submit 'Find out' %>
 
