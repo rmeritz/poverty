@@ -1,13 +1,16 @@
 class SalariesController < ApplicationController
   def index
-    render :text => "created_at,amount,ip"
+    salary_csv_s = Salary.all.map do |salary|
+      salary.to_csv
+    end.join "\n"
+    render :text => "created_at,amount,ip\n#{salary_csv_s}"
   end
   def new
-    @salary = presenter
+    @salary = Salary.new
   end
   def create 
-    @salary = presenter.with_params(params[:salary])
-    if @salary.valid?
+    @salary = Salary.new(params[:salary].merge(:ip => user_ip))
+    if @salary.save
       salary_sorter = SalarySorter.new(@salary)
       if salary_sorter.in_poverty?
         @amount_under = salary_sorter.delta
@@ -20,10 +23,8 @@ class SalariesController < ApplicationController
       render :new
     end
   end
-  def presenter
-    Presenter.new('salary',
-                  :fields => [:amount], 
-                  :validator => SalaryValidator)
+  def user_ip
+    ENV['RAILS_TEST_IP_ADDRESS'] || request.remote_ip
   end
 end
 

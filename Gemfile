@@ -13,6 +13,7 @@ gem 'launchy'
 gem 'cucumber-rails'
 gem 'capybara'
 gem 'capybara-webkit'
+gem 'timecop'
 end 
 
 gem 'json'
