@@ -7,6 +7,7 @@ Feature: Entering a Salary
     
   Scenario: Living in Poverty
     When I go to the homepage
-    And I submit a tiny value
+    And I submit a salary of $1/yr
     Then I see that I'm living in poverty
+    And that I make $10889/yr below the poverty line
 

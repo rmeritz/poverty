@@ -16,11 +16,12 @@ Then /^I see that I'm not living in poverty$/ do #'
   page.should have_content('no')
 end
 
-When /^I submit a tiny value$/ do
-  fill_in('salary', :with=>'10000')
-  click_button('Find out')
-end
-
 Then /^that I make \$(\d+)\/yr more than those in poverty$/ do |amount_over|
   page.should have_content("You make $#{amount_over}/yr above the poverty line.")
 end
+Then /^that I make \$(\d+)\/yr below the poverty line$/ do |amount_under|
+  page.should have_content("You make $#{amount_under}/yr below the poverty line.")
+end
+
+
+

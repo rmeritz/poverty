@@ -6,6 +6,7 @@ class SalariesController < ApplicationController
     @salary = presenter.with_params(params[:salary])
     salary_sorter = SalarySorter.new(@salary)
     if salary_sorter.in_poverty?
+      @amount_under = salary_sorter.delta
       render :action => 'yes'
     else
       @amount_over = salary_sorter.delta
