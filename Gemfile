@@ -12,6 +12,7 @@ gem 'database_cleaner'
 gem 'launchy'
 gem 'cucumber-rails'
 gem 'capybara'
+gem 'capybara-webkit'
 end 
 
 gem 'json'

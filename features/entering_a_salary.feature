@@ -17,3 +17,4 @@ Feature: Entering a Salary
     Then I am still on the homepage
     And I see an error message for entering nothing
 
+
