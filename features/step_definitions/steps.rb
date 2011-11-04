@@ -1,10 +1,11 @@
+include ActionView::Helpers::NumberHelper
+
 When /^I go to the homepage$/ do
   visit('/')
-#  save_and_open_page
 end
 
 Then /^I see that I'm living in poverty$/ do #'
-  page.should have_content('yes')
+  page.should have_content('Yes')
 end
 
 When /^I submit a salary of \$(\d+)\/yr$/ do |amount|
@@ -14,17 +15,17 @@ When /^I submit a salary of \$(\d+)\/yr$/ do |amount|
 end
 
 Then /^I see that I'm not living in poverty$/ do #'
-  page.should have_content('no')
+  page.should have_content('No')
 end
 
 Then /^I see how far above the poverty line I am$/ do
   amount_over = @amount - SalarySorter::POVERTY_LINE
-  page.should have_content("You make $#{amount_over}/yr above the poverty line.")
+  page.should have_content("You make #{number_to_currency amount_over, :precision => 0} above the poverty line, per year.")
 end
 
 Then /^I see how far below the poverty line I am$/ do
   amount_under = SalarySorter::POVERTY_LINE - @amount
-  page.should have_content("You make $#{amount_under}/yr below the poverty line.")
+  page.should have_content("You make #{number_to_currency amount_under, :precision => 0} below the poverty line, per year.")
 end
 
 When /^I submit nothing$/ do
