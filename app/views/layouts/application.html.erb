@@ -9,12 +9,13 @@
 <body>
 
 <%= yield %>
-
-<p>
-<a href="http://rebecca.meritz.com">This website was brought to you by Rebecca Meritz.</a>
-
-<a href="http://www.census.gov/hhes/www/poverty/data/threshld/index.html">Data from U.S. Census Bureau 2011.</a> 
+<div id="links">
+<p class="link">
+<a href="http://www.census.gov/hhes/www/poverty/data/threshld/index.html">Data from U.S. Census Bureau 2011</a> 
 </p>
+<p class="link">
+<a href="http://rebecca.meritz.com">A Rebecca Meritz Website</a></p>
+</div>
 
 <%= yield :javascript%>
 <script type="text/javascript">

@@ -1,7 +1,9 @@
+<h1>Am I poor?</h1>
+
 <%=form_for @salary do | form | %>
-<%=@salary.errors.full_messages.join%>
-<%=form.text_field :amount %>
-<%=form.submit 'Find out' %>
+  <%=@salary.errors.full_messages.join%>
+<p id="amount">$ <%=form.text_field :amount %> /yr </p>
+  <%=form.submit 'Find out' %>
 <%end %> 
 
 <%content_for :javascript do %>
