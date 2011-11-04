@@ -1,2 +1,2 @@
-no
-You make $<%=@amount_over %>/yr above the poverty line.
+<h1 class="answer" id="no">No</h1>
+<p class="explanation">You make <%=number_to_currency @amount_over, :precision => 0%> above the poverty line, per year.</p>
