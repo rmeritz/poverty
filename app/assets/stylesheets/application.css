@@ -34,7 +34,8 @@ p.explanation {text-align: center}
 
 form, input {font-size: 60pt}
 
-input[type=text] {width: 5em}
+input[type=text] {width: 5em;
+		 text-align: right}
 
 input[type=submit] {font-size: 20pt;
 		    margin-left: 22em}
@@ -43,7 +44,8 @@ input[type=submit] {font-size: 20pt;
 	position: fixed;
         bottom: 1em}
 
-a:link {text-decoration:    none}
+a:link {text-decoration:    none;
+       color: black}
 
 a:visited {color:              #2e2e2e;
            text-decoration:    none}
